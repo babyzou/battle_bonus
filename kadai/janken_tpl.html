@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="left_btn">グー</li>
+    <li id="center_btn">チョキ</li>
+    <li id="right_btn">パー</li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="judgment">勝ち</div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+
+
+  // 乱数
+    
+
+//   グーボタンを押したとき
+$("#left_btn").on("click",function(){
+    let r = Math.ceil(Math.random()*3);
+if(r==1){
+        $("#pc_hands").html("グー")
+        $("#judgment").html("あいこ")
+}else if (r==2){
+        $("#pc_hands").html("チョキ")
+        $("#judgment").html("かち")
+}else if (r==3){
+        $("#pc_hands").html("パー")
+        $("#judgment").html("まけ")
+}});
+//   チョキボタンを押したとき
+$("#center_btn").on("click",function(){
+    let r = Math.ceil(Math.random()*3);
+if(r==1){
+    $("#pc_hands").html("グー")
+    $("#judgment").html("まけ")
+}else if (r==2){
+    $("#pc_hands").html("チョキ")
+    $("#judgment").html("あいこ")
+}else if (r==3){
+    $("#pc_hands").html("パー")
+    $("#judgment").html("かち")
+}});
+//   パーボタンを押した時
+$("#right_btn").on("click",function(){
+    let r = Math.ceil(Math.random()*3);
+if(r==1){
+    $("#pc_hands").html("グー")
+    $("#judgment").html("かち")
+}else if (r==2){
+    $("#pc_hands").html("チョキ")
+    $("#judgment").html("まけ")
+}else if (r==3){
+    $("#pc_hands").html("パー")
+    $("#judgment").html("あいこ")
+}});
+
+    // 勝った時はケンシロウの攻撃
+//結果を表示するためのプログラムです
+
+        
+
+
+  // あいこの時はラオウの攻撃→ケンシロウ耐える
+
+
+  // 負けた時はラオウの攻撃→ケンシロウ倒れる
+
+  //10連勝で音楽流れる
+
+  // 20連勝以上で負けたらラオウ昇天
+
+
+
+</script>
+</body>
+</html>

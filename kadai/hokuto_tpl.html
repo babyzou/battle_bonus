@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>君はラオウを倒せるか！？</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="left_btn">チート</li>
+    <li id="center_btn">運試し</li>
+    <li id="right_btn">無理ゲー</li>
+  </ul>
+  <!-- <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div> -->
+  <div id="judgment"><img src="img/hokutonoken1.jpeg" alt=""></div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+
+
+  // 乱数
+
+
+//   チートモード
+
+$("#left_btn").on("click",function(){
+  let r = Math.floor(Math.random()*10);
+    const music = new Audio('gif/battle_bonus.mp3');
+    music.play()
+if(3.0>=r>=1.0){
+        $("#judgment").html('<img src="gif/kachi.gif" width="600" height="auto">')//ケンシロウ勝利→継
+}else if (9.0>=r>=4.0){
+        $("#judgment").html('<img src="gif/aiko.gif" width="600" height="auto">')//ケンシロウ復活→継続
+}else {
+        $("#judgment").html('<img src="gif/make.gif" width="600" height="auto">')//ラオウ攻撃→終了      
+}});
+
+/*var count = 0;//変数countを0で初期化する。
+while(count<=10){
+  if(count>3){
+    $("#judgment").html('<img src="aiko.gif" width="600" height="auto">')
+    break;
+  }
+  console.log(count);
+  count++;
+}});*/
+
+
+//   運試しモード
+// var flag = true;
+$("#center_btn").on("click",function(){ 
+let r = Math.ceil(Math.random()*100);
+  const music = new Audio('gif/battle_bonus.mp3');
+  music.play()
+
+if(33>=r>=1){
+    $("#judgment").html('<img src="gif/kachi.gif" width="600" height="auto">')
+}else if (66>=r>33){
+    $("#judgment").html('<img src="gif/aiko.gif" width="600" height="auto">')
+}else if (100>=r>66){
+    $("#judgment").html('<img src="gif/make.gif" width="600" height="auto">')
+}})
+//   無理ゲーモード
+$("#right_btn").on("click",function(){
+    let r = Math.ceil(Math.random()*100);
+    const music = new Audio('gif/battle_bonus.mp3');
+    music.play()
+if(20>=r>=1){
+    $("#judgment").html('<img src="gif/kachi.gif" width="600" height="auto">')
+}else if (50>=r>=21){
+    $("#judgment").html('<img src="gif/aiko.gif" width="600" height="auto">')
+}else if (100>=r>=51){
+    $("#judgment").html('<img src="gif/make.gif" width="600" height="auto">')
+}});
+
+
+// 連勝
+// var win = 0;
+// var isLose = false;
+// while (!isLose){
+  // var 
+// }
+
+  // 勝った時はケンシロウの攻撃
+
+  // あいこの時はラオウの攻撃→ケンシロウ耐える
+
+  // 負けた時はラオウの攻撃→ケンシロウ倒れる
+
+  //10連勝で愛を取り戻せが流れる
+
+  // 20連勝以上で負けたらラオウ昇天
+
+
+
+</script>
+</body>
+</html>
